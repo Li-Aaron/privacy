@@ -63,6 +63,15 @@ CREATE TABLE sf
 );
 ```
 
+```sql
+CREATE TABLE weibo
+(
+    id           BIGINT,
+    uid          TEXT,
+    phone_number INT
+);
+```
+
 2. 导入 QQ 库
 
 把 `6.9更新总库.txt` 文件放到项目根目录下，然后执行 `python scripts/qq.py`。
@@ -70,6 +79,11 @@ CREATE TABLE sf
 3. 导入京东库
 
 把 `www_jd_com_12g.txt` 文件放到项目根目录下，然后执行 `python scripts/jd.py`。
+
+4. 导入微博库
+
+把 `微博五亿2019.txt` 文件放到项目根目录下，然后执行 `python scripts/weibo.py`。
+
 
 - 创建索引
 
@@ -83,6 +97,8 @@ CREATE INDEX index_qq_phone_number ON qq (phone_number);
 CREATE INDEX index_jd_email ON jd (email);
 CREATE INDEX index_jd_id_number ON jd (id_number);
 CREATE INDEX index_jd_phone_number ON jd (phone_number);
+CREATE INDEX index_weibo_phone_number ON weibo (phone_number);
+CREATE INDEX index_weibo_uid_number ON weibo (uid);
 ```
 
 4. 导入顺丰库
