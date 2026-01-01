@@ -74,16 +74,21 @@ CREATE TABLE weibo
 
 2. 导入 QQ 库
 
-把 `6.9更新总库.txt` 文件放到项目根目录下，然后执行 `python scripts/qq.py`。
+把 `6.9更新总库.txt` 文件放到项目根目录下，然后执行 `python3 scripts/qq.py`。
 
 3. 导入京东库
 
-把 `www_jd_com_12g.txt` 文件放到项目根目录下，然后执行 `python scripts/jd.py`。
+把 `www_jd_com_12g.txt` 文件放到项目根目录下，然后执行 `python3 scripts/jd.py`。
 
 4. 导入微博库
 
-把 `微博五亿2019.txt` 文件放到项目根目录下，然后执行 `python scripts/weibo.py`。
+把 `微博五亿2019.txt` 文件放到项目根目录下，然后执行 `python3 scripts/weibo.py`。
 
+```bash
+python3 scripts/weibo.py
+python3 scripts/jd.py
+python3 scripts/qq.py
+```
 
 - 创建索引
 
@@ -110,14 +115,15 @@ CREATE INDEX index_weibo_uid_number ON weibo (uid);
 1. 安装 Yarn
 
 ```bash
-npm install -g yarn
+sudo npm install -g yarn
 ```
 
 2. 安装 Golang
 
 ```bash
 sudo apt install -y snap
-sudo snap install golang --classic
+# sudo snap install golang --classic
+sudo snap install go --classic
 ```
 
 3. 下载源代码
